@@ -77,11 +77,10 @@ build\Release\codex-wxpush.exe --window
 
 1. 打开 [微信公众平台接口测试帐号申请](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)。
 
-   参考图：[wx1.png](https://github.com/hezhizheng/go-wxpush/blob/master/img/wx1.png)
+  
 
 2. 获取 `appid` 和 `appsecret`。
 
-   参考图：[wx2.png](https://github.com/hezhizheng/go-wxpush/blob/master/img/wx2.png)
 
 3. 关注测试公众号，获取接收用户 `OpenID`，新增测试模板并获取 `template_id`。
 
@@ -93,11 +92,9 @@ build\Release\codex-wxpush.exe --window
 
    不建议只填写 `{{content.DATA}}`。前面加一点文案可以避免部分情况下推送正文不显示。
 
-   参考图：[wx3.png](https://github.com/hezhizheng/go-wxpush/blob/master/img/wx3.png)
 
 4. 将 `appid`、`appsecret`、`OpenID`、`template_id` 填入 `codex-wxpush` 控制台，然后点击 `测试推送`。
 
-   参考图：[w0.jpg](https://github.com/hezhizheng/go-wxpush/blob/master/img/w0.jpg)、[w1.jpg](https://github.com/hezhizheng/go-wxpush/blob/master/img/w1.jpg)
 
 ## Codex Hook
 
@@ -225,5 +222,5 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Run\codex-wxpush
 
 ## 感谢与参考
 
-- 感谢并参考 [hezhizheng/go-wxpush](https://github.com/hezhizheng/go-wxpush) 的微信测试号配置说明和示例图片；README 中仅保留图片链接，避免直接展开可能包含参数的截图。
+- 感谢并参考 [hezhizheng/go-wxpush](https://github.com/hezhizheng/go-wxpush)。
 - 友链：[LINUX DO](https://linux.do/)

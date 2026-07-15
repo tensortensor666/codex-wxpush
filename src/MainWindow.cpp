@@ -224,6 +224,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     applyStyle();
     loadSettings();
+    for (QCheckBox *check : {enabledCheck_, permissionCheck_, stopCheck_, errorsCheck_, toolUseCheck_, commandsCheck_}) {
+        connect(check, &QCheckBox::toggled, this, &MainWindow::saveNotificationOptions);
+    }
     refreshStatus();
     refreshLog();
 }
@@ -372,6 +375,21 @@ void MainWindow::saveSettings()
     emit settingsChanged();
     refreshStatus();
     QMessageBox::information(this, QStringLiteral("已保存"), QStringLiteral("配置已保存。"));
+}
+
+void MainWindow::saveNotificationOptions()
+{
+    AppSettings settings = AppSettings::load();
+    settings.enabled = enabledCheck_->isChecked();
+    settings.notifyPermissionRequest = permissionCheck_->isChecked();
+    settings.notifyStop = stopCheck_->isChecked();
+    settings.notifyErrors = errorsCheck_->isChecked();
+    settings.notifyToolUse = toolUseCheck_->isChecked();
+    settings.notifyCommands = commandsCheck_->isChecked();
+    settings.save();
+    appendLog(QStringLiteral("notification options saved"));
+    emit settingsChanged();
+    refreshStatus();
 }
 
 void MainWindow::refreshStatus()

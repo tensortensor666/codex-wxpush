@@ -28,6 +28,7 @@ private:
     AppSettings settingsFromForm() const;
     bool validateTemplateJson() const;
     void saveSettings();
+    void saveNotificationOptions();
     void refreshStatus();
     void refreshLog();
     void updateDetailUrlPreview();
